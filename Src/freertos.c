@@ -119,8 +119,8 @@ void MX_FREERTOS_Init(void) {
   //mm2ControlHandle = osThreadCreate(osThread(MOTOR2_TASK), (void *)2);
 	
   /* definition and creation of mmControl */
-  osThreadDef(MOTOR3_TASK, mmControlTask, osPriorityRealtime, 0, 512);
-  mm3ControlHandle = osThreadCreate(osThread(MOTOR3_TASK), (void *)3);
+  //osThreadDef(MOTOR3_TASK, mmControlTask, osPriorityRealtime, 0, 512);
+  //mm3ControlHandle = osThreadCreate(osThread(MOTOR3_TASK), (void *)3);
 	
   /* definition and creation of mmControl */
   //osThreadDef(MOTOR4_TASK, mmControlTask, osPriorityRealtime, 0, 512);

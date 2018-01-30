@@ -14,16 +14,16 @@ extern xQueueHandle xQueueMotorSetpoint[4];
 
 void mm_control_init(void)
 {
-	HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_1);
+	HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_1);
 	//HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_2);
-	HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_3);
+	//HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_3);
 	//HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_4);
 	
 	HAL_GPIO_WritePin(MOTOR_MS1_GPIO_Port, MOTOR_MS1_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(MOTOR_MS2_GPIO_Port, MOTOR_MS2_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(MOTOR_MS3_GPIO_Port, MOTOR_MS3_Pin, GPIO_PIN_RESET);
 	
-	MM_TimerPeriod = (uint16_t)((HAL_RCC_GetPCLK1Freq() * 2)/((MM_TIMER_PRESCALER+1)*MM_TIMER_FREQUENCY));
+	MM_TimerPeriod = (uint16_t)((HAL_RCC_GetPCLK2Freq() * 2)/((MM_TIMER_PRESCALER+1)*MM_TIMER_FREQUENCY));
 	delta[0] = MM_TimerPeriod;
 	//delta[1] = MM_TimerPeriod;
 	delta[2] = MM_TimerPeriod;
@@ -426,10 +426,10 @@ void mm_control_algorithm(mmControl_TypeDef *params, int motor_id)
 	//Set new compare on speed change for fast response
 	if(wNew != wAct[motor_id-1])
 	{
-		if (motor_id == 1) mm_control_motor1_set_compare(&htim4,(__HAL_TIM_GET_COUNTER(&htim4)+delta_)%MM_TimerPeriod);
-		else if (motor_id == 2) mm_control_motor2_set_compare(&htim4,(__HAL_TIM_GET_COUNTER(&htim4)+delta_)%MM_TimerPeriod);
-		else if (motor_id == 3) mm_control_motor3_set_compare(&htim4,(__HAL_TIM_GET_COUNTER(&htim4)+delta_)%MM_TimerPeriod);
-		else if (motor_id == 4) mm_control_motor4_set_compare(&htim4,(__HAL_TIM_GET_COUNTER(&htim4)+delta_)%MM_TimerPeriod);
+		if (motor_id == 1) mm_control_motor1_set_compare(&htim8,(__HAL_TIM_GET_COUNTER(&htim8)+delta_)%MM_TimerPeriod);
+		else if (motor_id == 2) mm_control_motor2_set_compare(&htim8,(__HAL_TIM_GET_COUNTER(&htim8)+delta_)%MM_TimerPeriod);
+		else if (motor_id == 3) mm_control_motor3_set_compare(&htim8,(__HAL_TIM_GET_COUNTER(&htim8)+delta_)%MM_TimerPeriod);
+		else if (motor_id == 4) mm_control_motor4_set_compare(&htim8,(__HAL_TIM_GET_COUNTER(&htim8)+delta_)%MM_TimerPeriod);
 	}
 	
 	//save new speed as actual speed for next step 
