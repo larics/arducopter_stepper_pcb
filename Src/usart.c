@@ -132,6 +132,8 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     HAL_NVIC_SetPriority(USART1_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(USART1_IRQn);
   /* USER CODE BEGIN USART1_MspInit 1 */
+		__HAL_UART_ENABLE_IT(uartHandle, UART_IT_RXNE);
+		__HAL_UART_ENABLE_IT(uartHandle, UART_IT_TC);
 
   /* USER CODE END USART1_MspInit 1 */
   }
@@ -180,7 +182,8 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
     /* USART1 interrupt Deinit */
     HAL_NVIC_DisableIRQ(USART1_IRQn);
   /* USER CODE BEGIN USART1_MspDeInit 1 */
-
+		__HAL_UART_DISABLE_IT(uartHandle, UART_IT_RXNE);
+		__HAL_UART_DISABLE_IT(uartHandle, UART_IT_TC);
   /* USER CODE END USART1_MspDeInit 1 */
   }
   else if(uartHandle->Instance==USART6)
@@ -278,7 +281,7 @@ int USART1_Dequeue(char* c)
 			ret = 1;
 		}
 		// end of critical section
-		HAL_NVIC_DisableIRQ(USART1_IRQn);
+		HAL_NVIC_EnableIRQ(USART1_IRQn);
 		return ret;
 }
 /* USER CODE END 1 */

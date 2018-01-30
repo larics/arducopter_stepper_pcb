@@ -15,15 +15,19 @@ extern xQueueHandle xQueueMotorSetpoint[4];
 void mm_control_init(void)
 {
 	HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_1);
-	HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_2);
+	//HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_2);
 	HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_3);
-	HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_4);
+	//HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_4);
+	
+	HAL_GPIO_WritePin(MOTOR_MS1_GPIO_Port, MOTOR_MS1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(MOTOR_MS2_GPIO_Port, MOTOR_MS2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(MOTOR_MS3_GPIO_Port, MOTOR_MS3_Pin, GPIO_PIN_RESET);
 	
 	MM_TimerPeriod = (uint16_t)((HAL_RCC_GetPCLK1Freq() * 2)/((MM_TIMER_PRESCALER+1)*MM_TIMER_FREQUENCY));
 	delta[0] = MM_TimerPeriod;
-	delta[1] = MM_TimerPeriod;
+	//delta[1] = MM_TimerPeriod;
 	delta[2] = MM_TimerPeriod;
-	delta[3] = MM_TimerPeriod;
+	//delta[3] = MM_TimerPeriod;
 }
 
 void mm_control_motor1_set_compare(TIM_HandleTypeDef *htim, uint32_t period)
@@ -339,23 +343,22 @@ void mm_control_algorithm(mmControl_TypeDef *params, int motor_id)
 																// -1 value signals that the motor should not move
 	int direction_ = 0;			//1 - forward, -1 - backward, 0 - stop
 	int stepAct = 0;
-	int ref = 0;
 	MM_ISR_message_TypeDef msg;
 	int32_t setpointMsg;
 	
 	//Checking if there is new setpoint available in the queue 
 	if(xQueueReceive( xQueueMotorSetpoint[motor_id-1], (void *)&setpointMsg, (TickType_t) 0) == pdTRUE)
 	{
-		ref = setpointMsg;
+		mm_ref[motor_id-1] = setpointMsg;
 	}
 	
 	//Get current step count
 	stepAct = getPulsCnt(motor_id);
 	//Control error signal
-	e = ref - stepAct;
+	e = mm_ref[motor_id-1] - stepAct;
 	
 	// implement dead zone
-	if (fabs(e) < params->dead_zone)
+	if (abs(e) < params->dead_zone)
 	{
 		e = 0;
 	}

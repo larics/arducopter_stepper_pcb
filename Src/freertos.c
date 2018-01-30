@@ -115,16 +115,16 @@ void MX_FREERTOS_Init(void) {
   mm1ControlHandle = osThreadCreate(osThread(MOTOR1_TASK), (void *)1);
 	
   /* definition and creation of mmControl */
-  osThreadDef(MOTOR2_TASK, mmControlTask, osPriorityRealtime, 0, 512);
-  mm2ControlHandle = osThreadCreate(osThread(MOTOR2_TASK), (void *)2);
+  //osThreadDef(MOTOR2_TASK, mmControlTask, osPriorityRealtime, 0, 512);
+  //mm2ControlHandle = osThreadCreate(osThread(MOTOR2_TASK), (void *)2);
 	
   /* definition and creation of mmControl */
   osThreadDef(MOTOR3_TASK, mmControlTask, osPriorityRealtime, 0, 512);
   mm3ControlHandle = osThreadCreate(osThread(MOTOR3_TASK), (void *)3);
 	
   /* definition and creation of mmControl */
-  osThreadDef(MOTOR4_TASK, mmControlTask, osPriorityRealtime, 0, 512);
-  mm4ControlHandle = osThreadCreate(osThread(MOTOR4_TASK), (void *)4);
+  //osThreadDef(MOTOR4_TASK, mmControlTask, osPriorityRealtime, 0, 512);
+  //mm4ControlHandle = osThreadCreate(osThread(MOTOR4_TASK), (void *)4);
 	
 	/* definition and creation of mmControl */
 	xTaskCreate(
@@ -193,6 +193,7 @@ void mmControlTask(void const * argument)
 			mm_motor_parameters.P = setupMsg.P;
 			mm_motor_parameters.omega_max = setupMsg.wMax;
 			mm_motor_parameters.acc_max = setupMsg.rLim;
+			mm_motor_parameters.dead_zone = setupMsg.dLim;;
 		}
 		mm_control_algorithm(&mm_motor_parameters, motorNumber);
 		osDelay(1000.0/MM_CONTROL_SAMPLING_FREQUENCY);

@@ -92,7 +92,7 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOB, LED_BLUE_Pin|LED_YELLOW_Pin|LED_RED_Pin|LED_ORANGE_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(MOTOR_MS1_GPIO_Port, MOTOR_MS1_Pin, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(MOTOR_MS1_GPIO_Port, MOTOR_MS1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : PC13 PC14 PC15 PC4 
                            PC5 PC9 */

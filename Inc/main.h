@@ -57,14 +57,14 @@
 
 /* Private define ------------------------------------------------------------*/
 
-#define MOTOR3_DIR_Pin GPIO_PIN_0
-#define MOTOR3_DIR_GPIO_Port GPIOC
-#define MOTOR3_STEP_Pin GPIO_PIN_1
-#define MOTOR3_STEP_GPIO_Port GPIOC
-#define MOTOR4_DIR_Pin GPIO_PIN_2
+#define MOTOR4_DIR_Pin GPIO_PIN_0
 #define MOTOR4_DIR_GPIO_Port GPIOC
-#define MOTOR4_STEP_Pin GPIO_PIN_3
+#define MOTOR4_STEP_Pin GPIO_PIN_1
 #define MOTOR4_STEP_GPIO_Port GPIOC
+#define MOTOR3_DIR_Pin GPIO_PIN_2
+#define MOTOR3_DIR_GPIO_Port GPIOC
+#define MOTOR3_STEP_Pin GPIO_PIN_3
+#define MOTOR3_STEP_GPIO_Port GPIOC
 #define MOTOR1_DIR_Pin GPIO_PIN_1
 #define MOTOR1_DIR_GPIO_Port GPIOA
 #define MOTOR1_STEP_Pin GPIO_PIN_2

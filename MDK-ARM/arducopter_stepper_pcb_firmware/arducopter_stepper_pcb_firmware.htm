@@ -3,9 +3,9 @@
 <title>Static Call Graph - [arducopter_stepper_pcb_firmware\arducopter_stepper_pcb_firmware.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image arducopter_stepper_pcb_firmware\arducopter_stepper_pcb_firmware.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu Jan 25 15:12:26 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Tue Jan 30 10:25:47 2018
 <BR><P>
-<H3>Maximum Stack Usage =        280 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        240 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 <P>
@@ -115,7 +115,7 @@ Function Pointers
  <LI><a href="#[a]">WWDG_IRQHandler</a> from startup_stm32f405xx.o(.text) referenced from startup_stm32f405xx.o(RESET)
  <LI><a href="#[5a]">__main</a> from entry.o(.ARM.Collect$$$$00000000) referenced from startup_stm32f405xx.o(.text)
  <LI><a href="#[58]">main</a> from main.o(i.main) referenced from entry9a.o(.ARM.Collect$$$$0000000B)
- <LI><a href="#[5f]">mmControlTask</a> from freertos.o(i.mmControlTask) referenced 4 times from freertos.o(.constdata)
+ <LI><a href="#[5f]">mmControlTask</a> from freertos.o(i.mmControlTask) referenced 2 times from freertos.o(.constdata)
  <LI><a href="#[5d]">prvIdleTask</a> from tasks.o(i.prvIdleTask) referenced from tasks.o(i.vTaskStartScheduler)
  <LI><a href="#[5c]">prvTaskExitError</a> from port.o(i.prvTaskExitError) referenced from port.o(i.pxPortInitialiseStack)
  <LI><a href="#[5b]">vDecodeMsgTask</a> from freertos.o(i.vDecodeMsgTask) referenced from freertos.o(i.MX_FREERTOS_Init)
@@ -550,6 +550,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getPulsCnt
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_MspInit
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_Dequeue
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_MspInit
 </UL>
 
@@ -741,7 +742,7 @@ Global Symbols
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART1_UART_Init
 </UL>
 
-<P><STRONG><a name="[8f]"></a>HAL_UART_MspInit</STRONG> (Thumb, 132 bytes, Stack size 48 bytes, usart.o(i.HAL_UART_MspInit))
+<P><STRONG><a name="[8f]"></a>HAL_UART_MspInit</STRONG> (Thumb, 156 bytes, Stack size 48 bytes, usart.o(i.HAL_UART_MspInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_UART_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
@@ -758,8 +759,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f405xx.o(RESET)
 </UL>
-<P><STRONG><a name="[92]"></a>MX_FREERTOS_Init</STRONG> (Thumb, 290 bytes, Stack size 120 bytes, freertos.o(i.MX_FREERTOS_Init))
-<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<P><STRONG><a name="[92]"></a>MX_FREERTOS_Init</STRONG> (Thumb, 246 bytes, Stack size 80 bytes, freertos.o(i.MX_FREERTOS_Init))
+<BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskCreate
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
@@ -888,7 +889,8 @@ Global Symbols
 <P><STRONG><a name="[a5]"></a>USART1_Dequeue</STRONG> (Thumb, 58 bytes, Stack size 16 bytes, usart.o(i.USART1_Dequeue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = USART1_Dequeue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_DisableIRQ
+<BR>[Calls]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_DisableIRQ
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vDecodeMsgTask
 </UL>
@@ -938,7 +940,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[58]"></a>main</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = main &rArr; MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
+<BR><BR>[Stack]<UL><LI>Max Depth = 240<LI>Call Chain = main &rArr; MX_FREERTOS_Init &rArr; osThreadCreate &rArr; xTaskCreate &rArr; pvPortMalloc &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelStart
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mm_control_init
@@ -952,7 +954,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[5f]"></a>mmControlTask</STRONG> (Thumb, 94 bytes, Stack size 40 bytes, freertos.o(i.mmControlTask))
+<P><STRONG><a name="[5f]"></a>mmControlTask</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, freertos.o(i.mmControlTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = mmControlTask &rArr; mm_control_algorithm &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
@@ -971,7 +973,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
 </UL>
 
-<P><STRONG><a name="[ac]"></a>mm_control_algorithm</STRONG> (Thumb, 420 bytes, Stack size 56 bytes, mm_control.o(i.mm_control_algorithm))
+<P><STRONG><a name="[ac]"></a>mm_control_algorithm</STRONG> (Thumb, 434 bytes, Stack size 56 bytes, mm_control.o(i.mm_control_algorithm))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = mm_control_algorithm &rArr; xQueueGenericReceive &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
@@ -985,7 +987,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mmControlTask
 </UL>
 
-<P><STRONG><a name="[a9]"></a>mm_control_init</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, mm_control.o(i.mm_control_init))
+<P><STRONG><a name="[a9]"></a>mm_control_init</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, mm_control.o(i.mm_control_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = mm_control_init &rArr; HAL_TIM_OC_Start_IT &rArr; TIM_CCxChannelCmd
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
