@@ -4,30 +4,34 @@
 #include <stdlib.h>
 #include <usart.h>
 
-int32_t delta[4] = {0};
 int wAct[4] = {0};
 int pulsCnt[4] = {0};
 int mm_ref[4] = {0};
 uint32_t MM_TimerPeriod = 0;
 extern xQueueHandle mm_motorISRqueue[4];
 extern xQueueHandle xQueueMotorSetpoint[4];
+int32_t delta1 = 0;
+int32_t delta2 = 0;
+int32_t delta3 = 0;
+int32_t delta4 = 0;
 
 void mm_control_init(void)
 {
 	HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_1);
-	//HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_2);
-	//HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_3);
-	//HAL_TIM_OC_Start_IT(&htim4, TIM_CHANNEL_4);
+	HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_2);
+	HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_3);
+	HAL_TIM_OC_Start_IT(&htim8, TIM_CHANNEL_4);
 	
-	HAL_GPIO_WritePin(MOTOR_MS1_GPIO_Port, MOTOR_MS1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(MOTOR_MS1_GPIO_Port, MOTOR_MS1_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(MOTOR_MS2_GPIO_Port, MOTOR_MS2_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(MOTOR_MS3_GPIO_Port, MOTOR_MS3_Pin, GPIO_PIN_RESET);
 	
 	MM_TimerPeriod = (uint16_t)((HAL_RCC_GetPCLK2Freq() * 2)/((MM_TIMER_PRESCALER+1)*MM_TIMER_FREQUENCY));
-	delta[0] = MM_TimerPeriod;
-	//delta[1] = MM_TimerPeriod;
-	delta[2] = MM_TimerPeriod;
-	//delta[3] = MM_TimerPeriod;
+	
+	delta1 = MM_TimerPeriod;
+	delta2 = MM_TimerPeriod;
+	delta3 = MM_TimerPeriod;
+	delta4 = MM_TimerPeriod;
 }
 
 void mm_control_motor1_set_compare(TIM_HandleTypeDef *htim, uint32_t period)
@@ -61,9 +65,16 @@ int mm_motor_get_ref_position(int motor)
 
 void mm_control_IRQHandler(TIM_HandleTypeDef *htim)
 {
-	static GPIO_PinState bitValue = GPIO_PIN_RESET;
+	static GPIO_PinState bitValue1 = GPIO_PIN_RESET;
+	static GPIO_PinState bitValue2 = GPIO_PIN_RESET;
+	static GPIO_PinState bitValue3 = GPIO_PIN_RESET;
+	static GPIO_PinState bitValue4 = GPIO_PIN_RESET;
 	//static int32_t delta = 0;
-	static int16_t direction[4] = {0};
+	static int16_t direction1 = 0;
+	static int16_t direction2 = 0;
+	static int16_t direction3 = 0;
+	static int16_t direction4 = 0;
+	
 	uint32_t tmp1 = 0, tmp2 = 0;
 	MM_ISR_message_TypeDef mm_queue;
 	BaseType_t xTaskWokenByReceive = pdFALSE;
@@ -78,23 +89,23 @@ void mm_control_IRQHandler(TIM_HandleTypeDef *htim)
 		HAL_GPIO_TogglePin(LED_BLUE_GPIO_Port, LED_BLUE_Pin);
 		if(xQueueReceiveFromISR(mm_motorISRqueue[0], (void *)&mm_queue, &xTaskWokenByReceive) == pdTRUE)
 		{
-			delta[0] 		= mm_queue.delta;
-			direction[0] = mm_queue.direction;
+			delta1 		= mm_queue.delta;
+			direction1 = mm_queue.direction;
 		}
 			
-		if(delta[0] != -1)
+		if(delta1 != -1)
 		{
-			bitValue = (bitValue == GPIO_PIN_RESET) ? GPIO_PIN_SET : GPIO_PIN_RESET;
+			bitValue1 = (bitValue1 == GPIO_PIN_RESET) ? GPIO_PIN_SET : GPIO_PIN_RESET;
 
-			HAL_GPIO_WritePin(MOTOR1_STEP_GPIO_Port, MOTOR1_STEP_Pin, bitValue);
+			HAL_GPIO_WritePin(MOTOR1_STEP_GPIO_Port, MOTOR1_STEP_Pin, bitValue1);
 				
-			if(bitValue == GPIO_PIN_RESET)
+			if(bitValue1 == GPIO_PIN_RESET)
 			{
-				if(direction[0] == 1)
+				if(direction1 == 1)
 				{
 					pulsCnt[0] = pulsCnt[0] + 1;
 				}
-				else if (direction[0] == -1)
+				else if (direction1 == -1)
 				{
 					pulsCnt[0] = pulsCnt[0] - 1;
 				}
@@ -102,20 +113,20 @@ void mm_control_IRQHandler(TIM_HandleTypeDef *htim)
 		}
 			
 		//Set direction pin properly
-		if(direction[0] == 1)
+		if(direction1 == 1)
 		{
 			HAL_GPIO_WritePin(MOTOR1_DIR_GPIO_Port, MOTOR1_DIR_Pin, GPIO_PIN_RESET);
 		}
-		else if(direction[0] == -1)
+		else if(direction1 == -1)
 		{
 			HAL_GPIO_WritePin(MOTOR1_DIR_GPIO_Port, MOTOR1_DIR_Pin, GPIO_PIN_SET);
 		}
 			
 		//Set next OC ISR time
 		curTim = __HAL_TIM_GET_COUNTER(htim);
-		if (delta[0] != -1)
+		if (delta1 != -1)
 		{
-			mm_control_motor1_set_compare(htim,(curTim+delta[0])%MM_TimerPeriod);
+			mm_control_motor1_set_compare(htim,(curTim+delta1)%MM_TimerPeriod);
 		}
 		else
 		{
@@ -134,23 +145,23 @@ void mm_control_IRQHandler(TIM_HandleTypeDef *htim)
 		HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
 		if(xQueueReceiveFromISR(mm_motorISRqueue[1], (void *)&mm_queue, &xTaskWokenByReceive) == pdTRUE)
 		{
-			delta[1] 		= mm_queue.delta;
-			direction[1] = mm_queue.direction;
+			delta2 		= mm_queue.delta;
+			direction2 = mm_queue.direction;
 		}
 			
-		if(delta[1] != -1)
+		if(delta2 != -1)
 		{
-			bitValue = (bitValue == GPIO_PIN_RESET) ? GPIO_PIN_SET : GPIO_PIN_RESET;
+			bitValue2 = (bitValue2 == GPIO_PIN_RESET) ? GPIO_PIN_SET : GPIO_PIN_RESET;
 
-			HAL_GPIO_WritePin(MOTOR2_STEP_GPIO_Port, MOTOR2_STEP_Pin, bitValue);
+			HAL_GPIO_WritePin(MOTOR2_STEP_GPIO_Port, MOTOR2_STEP_Pin, bitValue2);
 				
-			if(bitValue == GPIO_PIN_RESET)
+			if(bitValue2 == GPIO_PIN_SET)
 			{
-				if(direction[1] == 1)
+				if(direction2 == 1)
 				{
 					pulsCnt[1] = pulsCnt[1] + 1;
 				}
-				else if (direction[1] == -1)
+				else if (direction2 == -1)
 				{
 					pulsCnt[1] = pulsCnt[1] - 1;
 				}
@@ -158,20 +169,20 @@ void mm_control_IRQHandler(TIM_HandleTypeDef *htim)
 		}
 			
 		//Set direction pin properly
-		if(direction[1] == 1)
+		if(direction2 == 1)
 		{
 			HAL_GPIO_WritePin(MOTOR2_DIR_GPIO_Port, MOTOR2_DIR_Pin, GPIO_PIN_RESET);
 		}
-		else if(direction[1] == -1)
+		else if(direction2 == -1)
 		{
 			HAL_GPIO_WritePin(MOTOR2_DIR_GPIO_Port, MOTOR2_DIR_Pin, GPIO_PIN_SET);
 		}
 			
 		//Set next OC ISR time
 		curTim = __HAL_TIM_GET_COUNTER(htim);
-		if (delta[1] != -1)
+		if (delta2 != -1)
 		{
-			mm_control_motor2_set_compare(htim,(curTim+delta[1])%MM_TimerPeriod);
+			mm_control_motor2_set_compare(htim,(curTim+delta2)%MM_TimerPeriod);
 		}
 		else
 		{
@@ -190,23 +201,23 @@ void mm_control_IRQHandler(TIM_HandleTypeDef *htim)
 		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 		if(xQueueReceiveFromISR(mm_motorISRqueue[2], (void *)&mm_queue, &xTaskWokenByReceive) == pdTRUE)
 		{
-			delta[2] 		= mm_queue.delta;
-			direction[2] = mm_queue.direction;
+			delta3 		= mm_queue.delta;
+			direction3 = mm_queue.direction;
 		}
 			
-		if(delta[2] != -1)
+		if(delta3 != -1)
 		{
-			bitValue = (bitValue == GPIO_PIN_RESET) ? GPIO_PIN_SET : GPIO_PIN_RESET;
+			bitValue3 = (bitValue3 == GPIO_PIN_RESET) ? GPIO_PIN_SET : GPIO_PIN_RESET;
 
-			HAL_GPIO_WritePin(MOTOR3_STEP_GPIO_Port, MOTOR3_STEP_Pin, bitValue);
+			HAL_GPIO_WritePin(MOTOR3_STEP_GPIO_Port, MOTOR3_STEP_Pin, bitValue3);
 				
-			if(bitValue == GPIO_PIN_RESET)
+			if(bitValue3 == GPIO_PIN_RESET)
 			{
-				if(direction[2] == 1)
+				if(direction3 == 1)
 				{
 					pulsCnt[2] = pulsCnt[2] + 1;
 				}
-				else if (direction[2] == -1)
+				else if (direction3 == -1)
 				{
 					pulsCnt[2] = pulsCnt[2] - 1;
 				}
@@ -214,20 +225,20 @@ void mm_control_IRQHandler(TIM_HandleTypeDef *htim)
 		}
 			
 		//Set direction pin properly
-		if(direction[2] == 1)
+		if(direction3 == 1)
 		{
 			HAL_GPIO_WritePin(MOTOR3_DIR_GPIO_Port, MOTOR3_DIR_Pin, GPIO_PIN_RESET);
 		}
-		else if(direction[2] == -1)
+		else if(direction3 == -1)
 		{
 			HAL_GPIO_WritePin(MOTOR3_DIR_GPIO_Port, MOTOR3_DIR_Pin, GPIO_PIN_SET);
 		}
 			
 		//Set next OC ISR time
 		curTim = __HAL_TIM_GET_COUNTER(htim);
-		if (delta[2] != -1)
+		if (delta3 != -1)
 		{
-			mm_control_motor3_set_compare(htim,(curTim+delta[2])%MM_TimerPeriod);
+			mm_control_motor3_set_compare(htim,(curTim+delta3)%MM_TimerPeriod);
 		}
 		else
 		{
@@ -246,23 +257,23 @@ void mm_control_IRQHandler(TIM_HandleTypeDef *htim)
 		HAL_GPIO_TogglePin(LED_ORANGE_GPIO_Port, LED_ORANGE_Pin);
 		if(xQueueReceiveFromISR(mm_motorISRqueue[3], (void *)&mm_queue, &xTaskWokenByReceive) == pdTRUE)
 		{
-			delta[3] 		= mm_queue.delta;
-			direction[3] = mm_queue.direction;
+			delta4 		= mm_queue.delta;
+			direction4 = mm_queue.direction;
 		}
 			
-		if(delta[3] != -1)
+		if(delta4 != -1)
 		{
-			bitValue = (bitValue == GPIO_PIN_RESET) ? GPIO_PIN_SET : GPIO_PIN_RESET;
+			bitValue4 = (bitValue4 == GPIO_PIN_RESET) ? GPIO_PIN_SET : GPIO_PIN_RESET;
 
-			HAL_GPIO_WritePin(MOTOR4_STEP_GPIO_Port, MOTOR4_STEP_Pin, bitValue);
+			HAL_GPIO_WritePin(MOTOR4_STEP_GPIO_Port, MOTOR4_STEP_Pin, bitValue4);
 				
-			if(bitValue == GPIO_PIN_RESET)
+			if(bitValue4 == GPIO_PIN_RESET)
 			{
-				if(direction[3] == 1)
+				if(direction4 == 1)
 				{
 					pulsCnt[3] = pulsCnt[3] + 1;
 				}
-				else if (direction[3] == -1)
+				else if (direction4 == -1)
 				{
 					pulsCnt[3] = pulsCnt[3] - 1;
 				}
@@ -270,20 +281,20 @@ void mm_control_IRQHandler(TIM_HandleTypeDef *htim)
 		}
 			
 		//Set direction pin properly
-		if(direction[3] == 1)
+		if(direction4 == 1)
 		{
 			HAL_GPIO_WritePin(MOTOR4_DIR_GPIO_Port, MOTOR4_DIR_Pin, GPIO_PIN_RESET);
 		}
-		else if(direction[3] == -1)
+		else if(direction4 == -1)
 		{
 			HAL_GPIO_WritePin(MOTOR4_DIR_GPIO_Port, MOTOR4_DIR_Pin, GPIO_PIN_SET);
 		}
 			
 		//Set next OC ISR time
 		curTim = __HAL_TIM_GET_COUNTER(htim);
-		if (delta[3] != -1)
+		if (delta4 != -1)
 		{
-			mm_control_motor4_set_compare(htim,(curTim+delta[3])%MM_TimerPeriod);
+			mm_control_motor4_set_compare(htim,(curTim+delta4)%MM_TimerPeriod);
 		}
 		else
 		{
@@ -409,7 +420,7 @@ void mm_control_algorithm(mmControl_TypeDef *params, int motor_id)
 	else
 	{
 		// period is 0.1 sec, so for 1 sec we need 10 * PERIOD ticks
-		delta_ = (10 * MM_TimerPeriod/(2*abs(wNew)));	//2 because it has to turn the step pin on and off in real delta time
+		delta_ = (MM_TIMER_FREQUENCY * MM_TimerPeriod/(2*abs(wNew)));	//2 because it has to turn the step pin on and off in real delta time
 		if (delta_ > MM_TimerPeriod)
 			delta_ = MM_TimerPeriod; // minimum speed > 0 is 10 pps
 		direction_ = sign(wNew);

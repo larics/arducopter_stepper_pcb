@@ -115,16 +115,16 @@ void MX_FREERTOS_Init(void) {
   mm1ControlHandle = osThreadCreate(osThread(MOTOR1_TASK), (void *)1);
 	
   /* definition and creation of mmControl */
-  //osThreadDef(MOTOR2_TASK, mmControlTask, osPriorityRealtime, 0, 512);
-  //mm2ControlHandle = osThreadCreate(osThread(MOTOR2_TASK), (void *)2);
+  osThreadDef(MOTOR2_TASK, mmControlTask, osPriorityRealtime, 0, 512);
+  mm2ControlHandle = osThreadCreate(osThread(MOTOR2_TASK), (void *)2);
 	
   /* definition and creation of mmControl */
-  //osThreadDef(MOTOR3_TASK, mmControlTask, osPriorityRealtime, 0, 512);
-  //mm3ControlHandle = osThreadCreate(osThread(MOTOR3_TASK), (void *)3);
+  osThreadDef(MOTOR3_TASK, mmControlTask, osPriorityRealtime, 0, 512);
+  mm3ControlHandle = osThreadCreate(osThread(MOTOR3_TASK), (void *)3);
 	
   /* definition and creation of mmControl */
-  //osThreadDef(MOTOR4_TASK, mmControlTask, osPriorityRealtime, 0, 512);
-  //mm4ControlHandle = osThreadCreate(osThread(MOTOR4_TASK), (void *)4);
+  osThreadDef(MOTOR4_TASK, mmControlTask, osPriorityRealtime, 0, 512);
+  mm4ControlHandle = osThreadCreate(osThread(MOTOR4_TASK), (void *)4);
 	
 	/* definition and creation of mmControl */
 	xTaskCreate(
@@ -178,10 +178,10 @@ void mmControlTask(void const * argument)
 	uint32_t motorNumber = (uint32_t)argument;
 	motor_setup_t setupMsg;
 	
-	mm_motor_parameters.P = 5;
-	mm_motor_parameters.acc_max = 1000;
+	mm_motor_parameters.P = 2;
+	mm_motor_parameters.acc_max = 1000000;
 	mm_motor_parameters.dead_zone = 0;
-	mm_motor_parameters.omega_max = 1200;
+	mm_motor_parameters.omega_max = 1200000;
 	mm_motor_parameters.SamplingFrequency = MM_CONTROL_SAMPLING_FREQUENCY;
 
   /* Infinite loop */
