@@ -56,13 +56,16 @@
 
 /* USER CODE BEGIN Includes */
 #include <mm_control.h>
+#include <scu_libuavcan.h>
+#include <flash.h>
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
+extern mmControl_TypeDef scu_parameters;
+scu_libuavcan scu_can1;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -82,7 +85,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+	int i;
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -108,7 +111,12 @@ int main(void)
   MX_TIM8_Init();
 
   /* USER CODE BEGIN 2 */
+	if (readParametersFromFlash(&scu_parameters) == HAL_ERROR)
+	readDefaultParameters(&scu_parameters);
+	
 	mm_control_init();
+	for (i = 0; i< 10000000; i++);
+	scu_can1.can_init();
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

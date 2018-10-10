@@ -22,12 +22,852 @@ Dialog DLL:      TCM.DLL V1.32.0.0
  
 <h2>Project:</h2>
 C:\Users\suiauthon\Documents\development\arducopter_stepper_pcb\MDK-ARM\arducopter_stepper_pcb_firmware.uvprojx
-Project File Date:  01/30/2018
+Project File Date:  02/09/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'arducopter_stepper_pcb_firmware'
-"arducopter_stepper_pcb_firmware\arducopter_stepper_pcb_firmware.axf" - 0 Error(s), 0 Warning(s).
+Before Build - User command #1: python ..\libuavcan\libuavcan\dsdl_compiler\libuavcan_dsdlc ../libuavcan/dsdl/uavcan -O ../dsdlc_generated
+compiling timers.c...
+compiling croutine.c...
+compiling list.c...
+compiling heap_4.c...
+compiling queue.c...
+compiling tasks.c...
+compiling event_groups.c...
+compiling port.c...
+compiling cmsis_os.c...
+compiling stm32f4xx_hal_uart.c...
+compiling stm32f4xx_hal_pwr_ex.c...
+compiling stm32f4xx_hal_rcc_ex.c...
+compiling stm32f4xx_hal_flash_ramfunc.c...
+compiling stm32f4xx_hal_flash.c...
+compiling system_stm32f4xx.c...
+compiling stm32f4xx_hal_tim_ex.c...
+compiling stm32f4xx_hal_dma.c...
+compiling stm32f4xx_hal_flash_ex.c...
+compiling stm32f4xx_hal_pwr.c...
+compiling stm32f4xx_hal_gpio.c...
+compiling stm32f4xx_hal_dma_ex.c...
+compiling stm32f4xx_hal_rcc.c...
+compiling stm32f4xx_hal_tim.c...
+compiling stm32f4xx_hal.c...
+compiling usart.c...
+compiling stm32f4xx_hal_cortex.c...
+compiling stm32f4xx_hal_msp.c...
+compiling stm32f4xx_hal_timebase_TIM.c...
+compiling stm32f4xx_it.c...
+compiling gpio.c...
+compiling scu_libuavcanSTM32.cpp...
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(488): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic push
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(489): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic ignored "-Wtype-limits"
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(540): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic pop
+..\dsdlc_generated\uavcan/Timestamp.hpp(241): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_TIMESTAMP_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/NodeStatus.hpp(486): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_NODESTATUS_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\HardwareVersion.hpp(335): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_HARDWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\SoftwareVersion.hpp(397): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_SOFTWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetNodeInfo.hpp(474): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETNODEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetNodeInfo, uavcan::protocol::GetNodeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetNodeInfo, Callback_=uavcan::NodeStatusProvider::GetNodeInfoCallback]"  at line 60 of "..\libuavcan\libuavcan\include\uavcan/protocol/node_status_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\DataTypeKind.hpp(252): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DATATYPEKIND_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp(604): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETDATATYPEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 27 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\debug\LogLevel.hpp(274): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGLEVEL_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/debug/LogMessage.hpp(306): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGMESSAGE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/RestartNode.hpp(405): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_RESTARTNODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::RestartNode, uavcan::protocol::RestartNode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::RestartNode, Callback_=uavcan::RestartRequestServer::RestartNodeCallback]"  at line 44 of "..\libuavcan\libuavcan\include\uavcan/protocol/restart_request_server.hpp"
+..\dsdlc_generated\uavcan\protocol\CANIfaceStats.hpp(292): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_CANIFACESTATS_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetTransportStats.hpp(463): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETTRANSPORTSTATS_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetTransportStats, uavcan::protocol::GetTransportStats_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetTransportStats, Callback_=uavcan::TransportStatsProvider::GetTransportStatsCallback]"  at line 26 of "..\libuavcan\libuavcan\include\uavcan/protocol/transport_stats_provider.hpp"
+..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32/can.hpp(234): warning:  #611-D: overloaded virtual function "uavcan::ICanDriver::getIface"  is only partially overridden in class "uavcan_stm32::CanDriver" 
+  class CanDriver : public uavcan::ICanDriver, uavcan::Noncopyable
+..\libuavcan\libuavcan\include\uavcan/build_config.hpp(246): warning:  #550-D: variable "dummy"  was set but never used
+          char dummy[(sizeof(T) <= MemPoolBlockSize) ? 1 : -1] = { '0' };
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(536): warning:  #111-D: statement is unreachable
+          UAVCAN_ASSERT(0); // Unreachable
+          detected during:
+            instantiation of "int uavcan::Array<T, ArrayMode, MaxSize_>::decode(uavcan::Array<T, ArrayMode, MaxSize_>::SelfType &, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with T=uavcan::IntegerSpec<8U, uavcan::SignednessUnsigned, uavcan::CastModeSaturate>, ArrayMode=uavcan::ArrayModeDynamic, MaxSize_=80U]"  at line 335 of "..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp"
+            instantiation of "int uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::decode(uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::ReferenceType, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with _tmpl=0]"  at line 263 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 139 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            implicit generation of "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::~TransferForwarder() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            [ 2 instantiation contexts not shown ]
+            instantiation of "void uavcan::LazyConstructor<T>::construct<P1,P2,P3,P4>(uavcan::ParameterType<P1>::Type, uavcan::ParameterType<P2>::Type, uavcan::ParameterType<P3>::Type, uavcan::ParameterType<P4>::Type) [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder, P1=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener> &, P2=const uavcan::DataTypeDescriptor &, P3=uavcan::uint16_t, P4=uavcan::IPoolAllocator &]"  at line 247 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::checkInit() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 287 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::genericStart(bool (uavcan::Dispatcher::*)(uavcan::TransferListener *)) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 190 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::startAsServiceRequestListener() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 175 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of "int uavcan::ServiceServer<DataType_, Callback_>::start(const uavcan::ServiceServer<DataType_, Callback_>::Callback &) [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 119 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\Src\scu_libuavcanSTM32.cpp: 22 warnings, 0 errors
+compiling tim.c...
+compiling mm_control.c...
+..\Src\mm_control.c(351): warning:  #177-D: variable "dLim_l"  was declared but never referenced
+  	int dLim_l = params->acc_max / params->SamplingFrequency;
+..\Src\mm_control.c: 1 warning, 0 errors
+compiling flash.c...
+compiling freertos.cpp...
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(488): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic push
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(489): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic ignored "-Wtype-limits"
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(540): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic pop
+..\dsdlc_generated\uavcan/Timestamp.hpp(241): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_TIMESTAMP_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/NodeStatus.hpp(486): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_NODESTATUS_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\HardwareVersion.hpp(335): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_HARDWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\SoftwareVersion.hpp(397): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_SOFTWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetNodeInfo.hpp(474): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETNODEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetNodeInfo, uavcan::protocol::GetNodeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetNodeInfo, Callback_=uavcan::NodeStatusProvider::GetNodeInfoCallback]"  at line 60 of "..\libuavcan\libuavcan\include\uavcan/protocol/node_status_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\DataTypeKind.hpp(252): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DATATYPEKIND_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp(604): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETDATATYPEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 27 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\debug\LogLevel.hpp(274): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGLEVEL_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/debug/LogMessage.hpp(306): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGMESSAGE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/RestartNode.hpp(405): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_RESTARTNODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::RestartNode, uavcan::protocol::RestartNode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::RestartNode, Callback_=uavcan::RestartRequestServer::RestartNodeCallback]"  at line 44 of "..\libuavcan\libuavcan\include\uavcan/protocol/restart_request_server.hpp"
+..\dsdlc_generated\uavcan\protocol\CANIfaceStats.hpp(292): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_CANIFACESTATS_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetTransportStats.hpp(463): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETTRANSPORTSTATS_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetTransportStats, uavcan::protocol::GetTransportStats_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetTransportStats, Callback_=uavcan::TransportStatsProvider::GetTransportStatsCallback]"  at line 26 of "..\libuavcan\libuavcan\include\uavcan/protocol/transport_stats_provider.hpp"
+..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32/can.hpp(234): warning:  #611-D: overloaded virtual function "uavcan::ICanDriver::getIface"  is only partially overridden in class "uavcan_stm32::CanDriver" 
+  class CanDriver : public uavcan::ICanDriver, uavcan::Noncopyable
+..\dsdlc_generated\uavcan/protocol/GlobalTimeSync.hpp(280): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GLOBALTIMESYNC_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GlobalTimeSync, DataStruct=uavcan::protocol::GlobalTimeSync, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GlobalTimeSync, uavcan::protocol::GlobalTimeSync, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GlobalTimeSync, DataStruct=uavcan::protocol::GlobalTimeSync, TransferListenerType=uavcan::TransferListener]"  at line 46 of "..\libuavcan\libuavcan\include\uavcan/node/subscriber.hpp"
+            instantiation of class "uavcan::Subscriber<DataType_, Callback_> [with DataType_=uavcan::protocol::GlobalTimeSync, Callback_=uavcan::GlobalTimeSyncSlave::GlobalTimeSyncCallback]"  at line 34 of "..\libuavcan\libuavcan\include\uavcan/protocol/global_time_sync_slave.hpp"
+..\dsdlc_generated\uavcan/equipment/actuator/ArrayCommand.hpp(250): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_EQUIPMENT_ACTUATOR_ARRAYCOMMAND_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\param\Empty.hpp(218): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_EMPTY_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\param\NumericValue.hpp(480): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_NUMERICVALUE_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\param\Value.hpp(600): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_VALUE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/param/GetSet.hpp(681): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_GETSET_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/param/ExecuteOpcode.hpp(492): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_EXECUTEOPCODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::param::ExecuteOpcode, DataStruct=uavcan::protocol::param::ExecuteOpcode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::param::ExecuteOpcode, uavcan::protocol::param::ExecuteOpcode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::param::ExecuteOpcode, DataStruct=uavcan::protocol::param::ExecuteOpcode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::param::ExecuteOpcode, Callback_=uavcan::ParamServer::ExecuteOpcodeCallback]"  at line 88 of "..\libuavcan\libuavcan\include\uavcan/protocol/param_server.hpp"
+../Inc/ScuParamManager.h(10): warning:  #1300-D: getParamNameByIndex inherits implicit virtual
+  	void getParamNameByIndex(Index index, Name& out_name) const;
+../Inc/ScuParamManager.h(11): warning:  #1300-D: assignParamValue inherits implicit virtual
+  	void assignParamValue(const Name& name, const Value& value);
+../Inc/ScuParamManager.h(12): warning:  #1300-D: readParamValue inherits implicit virtual
+  	void readParamValue(const Name& name, Value& out_value) const;
+../Inc/ScuParamManager.h(13): warning:  #1300-D: readParamDefaultMaxMin inherits implicit virtual
+  	void readParamDefaultMaxMin(const Name& name, Value& out_def,
+../Inc/ScuParamManager.h(15): warning:  #1300-D: eraseAllParams inherits implicit virtual
+  	int eraseAllParams();
+../Inc/ScuParamManager.h(16): warning:  #1300-D: saveAllParams inherits implicit virtual
+  	int saveAllParams();
+../Inc/ScuRestartRequestHandler.h(8): warning:  #1300-D: handleRestartRequest inherits implicit virtual
+  	bool handleRestartRequest(uavcan::NodeID request_source);
+..\libuavcan\libuavcan\include\uavcan/build_config.hpp(246): warning:  #550-D: variable "dummy"  was set but never used
+          char dummy[(sizeof(T) <= MemPoolBlockSize) ? 1 : -1] = { '0' };
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(536): warning:  #111-D: statement is unreachable
+          UAVCAN_ASSERT(0); // Unreachable
+          detected during:
+            instantiation of "int uavcan::Array<T, ArrayMode, MaxSize_>::decode(uavcan::Array<T, ArrayMode, MaxSize_>::SelfType &, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with T=uavcan::IntegerSpec<8U, uavcan::SignednessUnsigned, uavcan::CastModeSaturate>, ArrayMode=uavcan::ArrayModeDynamic, MaxSize_=80U]"  at line 335 of "..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp"
+            instantiation of "int uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::decode(uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::ReferenceType, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with _tmpl=0]"  at line 263 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 139 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            implicit generation of "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::~TransferForwarder() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            [ 2 instantiation contexts not shown ]
+            instantiation of "void uavcan::LazyConstructor<T>::construct<P1,P2,P3,P4>(uavcan::ParameterType<P1>::Type, uavcan::ParameterType<P2>::Type, uavcan::ParameterType<P3>::Type, uavcan::ParameterType<P4>::Type) [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder, P1=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener> &, P2=const uavcan::DataTypeDescriptor &, P3=uavcan::uint16_t, P4=uavcan::IPoolAllocator &]"  at line 247 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::checkInit() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 287 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::genericStart(bool (uavcan::Dispatcher::*)(uavcan::TransferListener *)) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 190 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::startAsServiceRequestListener() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 175 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of "int uavcan::ServiceServer<DataType_, Callback_>::start(const uavcan::ServiceServer<DataType_, Callback_>::Callback &) [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 119 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\Src\freertos.cpp: 40 warnings, 0 errors
+compiling main.cpp...
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(488): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic push
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(489): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic ignored "-Wtype-limits"
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(540): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic pop
+..\dsdlc_generated\uavcan/Timestamp.hpp(241): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_TIMESTAMP_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/NodeStatus.hpp(486): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_NODESTATUS_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\HardwareVersion.hpp(335): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_HARDWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\SoftwareVersion.hpp(397): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_SOFTWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetNodeInfo.hpp(474): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETNODEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetNodeInfo, uavcan::protocol::GetNodeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetNodeInfo, Callback_=uavcan::NodeStatusProvider::GetNodeInfoCallback]"  at line 60 of "..\libuavcan\libuavcan\include\uavcan/protocol/node_status_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\DataTypeKind.hpp(252): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DATATYPEKIND_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp(604): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETDATATYPEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 27 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\debug\LogLevel.hpp(274): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGLEVEL_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/debug/LogMessage.hpp(306): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGMESSAGE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/RestartNode.hpp(405): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_RESTARTNODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::RestartNode, uavcan::protocol::RestartNode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::RestartNode, Callback_=uavcan::RestartRequestServer::RestartNodeCallback]"  at line 44 of "..\libuavcan\libuavcan\include\uavcan/protocol/restart_request_server.hpp"
+..\dsdlc_generated\uavcan\protocol\CANIfaceStats.hpp(292): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_CANIFACESTATS_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetTransportStats.hpp(463): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETTRANSPORTSTATS_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32/can.hpp(234): warning:  #611-D: overloaded virtual function "uavcan::ICanDriver::getIface"  is only partially overridden in class "uavcan_stm32::CanDriver" 
+  class CanDriver : public uavcan::ICanDriver, uavcan::Noncopyable
+..\dsdlc_generated\uavcan/protocol/GlobalTimeSync.hpp(280): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GLOBALTIMESYNC_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GlobalTimeSync, DataStruct=uavcan::protocol::GlobalTimeSync, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GlobalTimeSync, uavcan::protocol::GlobalTimeSync, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GlobalTimeSync, DataStruct=uavcan::protocol::GlobalTimeSync, TransferListenerType=uavcan::TransferListener]"  at line 46 of "..\libuavcan\libuavcan\include\uavcan/node/subscriber.hpp"
+            instantiation of class "uavcan::Subscriber<DataType_, Callback_> [with DataType_=uavcan::protocol::GlobalTimeSync, Callback_=uavcan::GlobalTimeSyncSlave::GlobalTimeSyncCallback]"  at line 34 of "..\libuavcan\libuavcan\include\uavcan/protocol/global_time_sync_slave.hpp"
+..\dsdlc_generated\uavcan\equipment\actuator\Command.hpp(339): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_EQUIPMENT_ACTUATOR_COMMAND_HPP_INCLUDED
+..\dsdlc_generated\uavcan/equipment/actuator/ArrayCommand.hpp(250): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_EQUIPMENT_ACTUATOR_ARRAYCOMMAND_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\param\Empty.hpp(218): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_EMPTY_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\param\NumericValue.hpp(480): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_NUMERICVALUE_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\param\Value.hpp(600): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_VALUE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/param/GetSet.hpp(681): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_GETSET_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/param/ExecuteOpcode.hpp(492): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_EXECUTEOPCODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::param::GetSet, DataStruct=uavcan::protocol::param::GetSet_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::param::GetSet, uavcan::protocol::param::GetSet_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::param::GetSet, DataStruct=uavcan::protocol::param::GetSet_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::param::GetSet, Callback_=uavcan::ParamServer::GetSetCallback]"  at line 87 of "..\libuavcan\libuavcan\include\uavcan/protocol/param_server.hpp"
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::param::ExecuteOpcode, DataStruct=uavcan::protocol::param::ExecuteOpcode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::param::ExecuteOpcode, uavcan::protocol::param::ExecuteOpcode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::param::ExecuteOpcode, DataStruct=uavcan::protocol::param::ExecuteOpcode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::param::ExecuteOpcode, Callback_=uavcan::ParamServer::ExecuteOpcodeCallback]"  at line 88 of "..\libuavcan\libuavcan\include\uavcan/protocol/param_server.hpp"
+../Inc/ScuParamManager.h(10): warning:  #1300-D: getParamNameByIndex inherits implicit virtual
+  	void getParamNameByIndex(Index index, Name& out_name) const;
+../Inc/ScuParamManager.h(11): warning:  #1300-D: assignParamValue inherits implicit virtual
+  	void assignParamValue(const Name& name, const Value& value);
+../Inc/ScuParamManager.h(12): warning:  #1300-D: readParamValue inherits implicit virtual
+  	void readParamValue(const Name& name, Value& out_value) const;
+../Inc/ScuParamManager.h(13): warning:  #1300-D: readParamDefaultMaxMin inherits implicit virtual
+  	void readParamDefaultMaxMin(const Name& name, Value& out_def,
+../Inc/ScuParamManager.h(15): warning:  #1300-D: eraseAllParams inherits implicit virtual
+  	int eraseAllParams();
+../Inc/ScuParamManager.h(16): warning:  #1300-D: saveAllParams inherits implicit virtual
+  	int saveAllParams();
+../Inc/ScuRestartRequestHandler.h(8): warning:  #1300-D: handleRestartRequest inherits implicit virtual
+  	bool handleRestartRequest(uavcan::NodeID request_source);
+..\libuavcan\libuavcan\include\uavcan/build_config.hpp(246): warning:  #550-D: variable "dummy"  was set but never used
+          char dummy[(sizeof(T) <= MemPoolBlockSize) ? 1 : -1] = { '0' };
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(536): warning:  #111-D: statement is unreachable
+          UAVCAN_ASSERT(0); // Unreachable
+          detected during:
+            instantiation of "int uavcan::Array<T, ArrayMode, MaxSize_>::decode(uavcan::Array<T, ArrayMode, MaxSize_>::SelfType &, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with T=uavcan::IntegerSpec<8U, uavcan::SignednessUnsigned, uavcan::CastModeSaturate>, ArrayMode=uavcan::ArrayModeDynamic, MaxSize_=80U]"  at line 335 of "..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp"
+            instantiation of "int uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::decode(uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::ReferenceType, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with _tmpl=0]"  at line 263 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 139 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            implicit generation of "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::~TransferForwarder() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            [ 2 instantiation contexts not shown ]
+            instantiation of "void uavcan::LazyConstructor<T>::construct<P1,P2,P3,P4>(uavcan::ParameterType<P1>::Type, uavcan::ParameterType<P2>::Type, uavcan::ParameterType<P3>::Type, uavcan::ParameterType<P4>::Type) [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder, P1=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener> &, P2=const uavcan::DataTypeDescriptor &, P3=uavcan::uint16_t, P4=uavcan::IPoolAllocator &]"  at line 247 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::checkInit() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 287 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::genericStart(bool (uavcan::Dispatcher::*)(uavcan::TransferListener *)) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 190 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::startAsServiceRequestListener() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 175 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of "int uavcan::ServiceServer<DataType_, Callback_>::start(const uavcan::ServiceServer<DataType_, Callback_>::Callback &) [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 119 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\Src\main.cpp: 40 warnings, 0 errors
+compiling scu_libuavcan.cpp...
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(488): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic push
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(489): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic ignored "-Wtype-limits"
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(540): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic pop
+..\dsdlc_generated\uavcan/Timestamp.hpp(241): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_TIMESTAMP_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/NodeStatus.hpp(486): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_NODESTATUS_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\HardwareVersion.hpp(335): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_HARDWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\SoftwareVersion.hpp(397): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_SOFTWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetNodeInfo.hpp(474): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETNODEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetNodeInfo, uavcan::protocol::GetNodeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetNodeInfo, Callback_=uavcan::NodeStatusProvider::GetNodeInfoCallback]"  at line 60 of "..\libuavcan\libuavcan\include\uavcan/protocol/node_status_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\DataTypeKind.hpp(252): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DATATYPEKIND_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp(604): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETDATATYPEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 27 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\debug\LogLevel.hpp(274): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGLEVEL_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/debug/LogMessage.hpp(306): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGMESSAGE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/RestartNode.hpp(405): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_RESTARTNODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::RestartNode, uavcan::protocol::RestartNode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::RestartNode, Callback_=uavcan::RestartRequestServer::RestartNodeCallback]"  at line 44 of "..\libuavcan\libuavcan\include\uavcan/protocol/restart_request_server.hpp"
+..\dsdlc_generated\uavcan\protocol\CANIfaceStats.hpp(292): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_CANIFACESTATS_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetTransportStats.hpp(463): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETTRANSPORTSTATS_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetTransportStats, uavcan::protocol::GetTransportStats_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetTransportStats, Callback_=uavcan::TransportStatsProvider::GetTransportStatsCallback]"  at line 26 of "..\libuavcan\libuavcan\include\uavcan/protocol/transport_stats_provider.hpp"
+..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32/can.hpp(234): warning:  #611-D: overloaded virtual function "uavcan::ICanDriver::getIface"  is only partially overridden in class "uavcan_stm32::CanDriver" 
+  class CanDriver : public uavcan::ICanDriver, uavcan::Noncopyable
+..\dsdlc_generated\uavcan/protocol/GlobalTimeSync.hpp(280): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GLOBALTIMESYNC_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GlobalTimeSync, DataStruct=uavcan::protocol::GlobalTimeSync, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GlobalTimeSync, uavcan::protocol::GlobalTimeSync, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GlobalTimeSync, DataStruct=uavcan::protocol::GlobalTimeSync, TransferListenerType=uavcan::TransferListener]"  at line 46 of "..\libuavcan\libuavcan\include\uavcan/node/subscriber.hpp"
+            instantiation of class "uavcan::Subscriber<DataType_, Callback_> [with DataType_=uavcan::protocol::GlobalTimeSync, Callback_=uavcan::GlobalTimeSyncSlave::GlobalTimeSyncCallback]"  at line 34 of "..\libuavcan\libuavcan\include\uavcan/protocol/global_time_sync_slave.hpp"
+..\dsdlc_generated\uavcan\equipment\actuator\Command.hpp(339): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_EQUIPMENT_ACTUATOR_COMMAND_HPP_INCLUDED
+..\dsdlc_generated\uavcan/equipment/actuator/ArrayCommand.hpp(250): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_EQUIPMENT_ACTUATOR_ARRAYCOMMAND_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\param\Empty.hpp(218): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_EMPTY_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\param\NumericValue.hpp(480): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_NUMERICVALUE_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\param\Value.hpp(600): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_VALUE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/param/GetSet.hpp(681): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_GETSET_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/param/ExecuteOpcode.hpp(492): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_EXECUTEOPCODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::param::GetSet, DataStruct=uavcan::protocol::param::GetSet_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::param::GetSet, uavcan::protocol::param::GetSet_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::param::GetSet, DataStruct=uavcan::protocol::param::GetSet_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::param::GetSet, Callback_=uavcan::ParamServer::GetSetCallback]"  at line 87 of "..\libuavcan\libuavcan\include\uavcan/protocol/param_server.hpp"
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::param::ExecuteOpcode, DataStruct=uavcan::protocol::param::ExecuteOpcode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::param::ExecuteOpcode, uavcan::protocol::param::ExecuteOpcode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::param::ExecuteOpcode, DataStruct=uavcan::protocol::param::ExecuteOpcode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::param::ExecuteOpcode, Callback_=uavcan::ParamServer::ExecuteOpcodeCallback]"  at line 88 of "..\libuavcan\libuavcan\include\uavcan/protocol/param_server.hpp"
+../Inc/ScuParamManager.h(10): warning:  #1300-D: getParamNameByIndex inherits implicit virtual
+  	void getParamNameByIndex(Index index, Name& out_name) const;
+../Inc/ScuParamManager.h(11): warning:  #1300-D: assignParamValue inherits implicit virtual
+  	void assignParamValue(const Name& name, const Value& value);
+../Inc/ScuParamManager.h(12): warning:  #1300-D: readParamValue inherits implicit virtual
+  	void readParamValue(const Name& name, Value& out_value) const;
+../Inc/ScuParamManager.h(13): warning:  #1300-D: readParamDefaultMaxMin inherits implicit virtual
+  	void readParamDefaultMaxMin(const Name& name, Value& out_def,
+../Inc/ScuParamManager.h(15): warning:  #1300-D: eraseAllParams inherits implicit virtual
+  	int eraseAllParams();
+../Inc/ScuParamManager.h(16): warning:  #1300-D: saveAllParams inherits implicit virtual
+  	int saveAllParams();
+../Inc/ScuRestartRequestHandler.h(8): warning:  #1300-D: handleRestartRequest inherits implicit virtual
+  	bool handleRestartRequest(uavcan::NodeID request_source);
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::equipment::actuator::ArrayCommand, DataStruct=uavcan::equipment::actuator::ArrayCommand, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::equipment::actuator::ArrayCommand, uavcan::equipment::actuator::ArrayCommand, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::equipment::actuator::ArrayCommand, DataStruct=uavcan::equipment::actuator::ArrayCommand, TransferListenerType=uavcan::TransferListener]"  at line 46 of "..\libuavcan\libuavcan\include\uavcan/node/subscriber.hpp"
+            instantiation of class "uavcan::Subscriber<DataType_, Callback_> [with DataType_=uavcan::equipment::actuator::ArrayCommand, Callback_=scu_libuavcan::motorRefCallbackBinder]"  at line 43 of "..\Src\scu_libuavcan.cpp"
+..\libuavcan\libuavcan\include\uavcan/build_config.hpp(246): warning:  #550-D: variable "dummy"  was set but never used
+          char dummy[(sizeof(T) <= MemPoolBlockSize) ? 1 : -1] = { '0' };
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(536): warning:  #111-D: statement is unreachable
+          UAVCAN_ASSERT(0); // Unreachable
+          detected during:
+            instantiation of "int uavcan::Array<T, ArrayMode, MaxSize_>::decode(uavcan::Array<T, ArrayMode, MaxSize_>::SelfType &, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with T=uavcan::IntegerSpec<8U, uavcan::SignednessUnsigned, uavcan::CastModeSaturate>, ArrayMode=uavcan::ArrayModeDynamic, MaxSize_=80U]"  at line 335 of "..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp"
+            instantiation of "int uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::decode(uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::ReferenceType, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with _tmpl=0]"  at line 263 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 139 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            implicit generation of "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::~TransferForwarder() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            [ 2 instantiation contexts not shown ]
+            instantiation of "void uavcan::LazyConstructor<T>::construct<P1,P2,P3,P4>(uavcan::ParameterType<P1>::Type, uavcan::ParameterType<P2>::Type, uavcan::ParameterType<P3>::Type, uavcan::ParameterType<P4>::Type) [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder, P1=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener> &, P2=const uavcan::DataTypeDescriptor &, P3=uavcan::uint16_t, P4=uavcan::IPoolAllocator &]"  at line 247 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::checkInit() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 287 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::genericStart(bool (uavcan::Dispatcher::*)(uavcan::TransferListener *)) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 190 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::startAsServiceRequestListener() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 175 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of "int uavcan::ServiceServer<DataType_, Callback_>::start(const uavcan::ServiceServer<DataType_, Callback_>::Callback &) [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 119 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\Src\scu_libuavcan.cpp: 41 warnings, 0 errors
+compiling ScuParamManager.cpp...
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(488): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic push
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(489): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic ignored "-Wtype-limits"
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(540): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic pop
+..\dsdlc_generated\uavcan/Timestamp.hpp(241): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_TIMESTAMP_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/NodeStatus.hpp(486): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_NODESTATUS_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\HardwareVersion.hpp(335): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_HARDWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\SoftwareVersion.hpp(397): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_SOFTWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetNodeInfo.hpp(474): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETNODEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetNodeInfo, uavcan::protocol::GetNodeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetNodeInfo, Callback_=uavcan::NodeStatusProvider::GetNodeInfoCallback]"  at line 60 of "..\libuavcan\libuavcan\include\uavcan/protocol/node_status_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\DataTypeKind.hpp(252): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DATATYPEKIND_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp(604): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETDATATYPEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 27 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\debug\LogLevel.hpp(274): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGLEVEL_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/debug/LogMessage.hpp(306): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGMESSAGE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/RestartNode.hpp(405): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_RESTARTNODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::RestartNode, uavcan::protocol::RestartNode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::RestartNode, Callback_=uavcan::RestartRequestServer::RestartNodeCallback]"  at line 44 of "..\libuavcan\libuavcan\include\uavcan/protocol/restart_request_server.hpp"
+..\dsdlc_generated\uavcan\protocol\CANIfaceStats.hpp(292): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_CANIFACESTATS_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetTransportStats.hpp(463): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETTRANSPORTSTATS_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetTransportStats, uavcan::protocol::GetTransportStats_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetTransportStats, Callback_=uavcan::TransportStatsProvider::GetTransportStatsCallback]"  at line 26 of "..\libuavcan\libuavcan\include\uavcan/protocol/transport_stats_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\param\NumericValue.hpp(480): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_NUMERICVALUE_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\param\Value.hpp(600): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_VALUE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/param/GetSet.hpp(681): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_GETSET_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/param/ExecuteOpcode.hpp(492): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_PARAM_EXECUTEOPCODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::param::GetSet, DataStruct=uavcan::protocol::param::GetSet_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::param::GetSet, uavcan::protocol::param::GetSet_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::param::GetSet, DataStruct=uavcan::protocol::param::GetSet_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::param::GetSet, Callback_=uavcan::ParamServer::GetSetCallback]"  at line 87 of "..\libuavcan\libuavcan\include\uavcan/protocol/param_server.hpp"
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::param::ExecuteOpcode, DataStruct=uavcan::protocol::param::ExecuteOpcode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::param::ExecuteOpcode, uavcan::protocol::param::ExecuteOpcode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::param::ExecuteOpcode, DataStruct=uavcan::protocol::param::ExecuteOpcode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::param::ExecuteOpcode, Callback_=uavcan::ParamServer::ExecuteOpcodeCallback]"  at line 88 of "..\libuavcan\libuavcan\include\uavcan/protocol/param_server.hpp"
+../Inc/ScuParamManager.h(10): warning:  #1300-D: getParamNameByIndex inherits implicit virtual
+  	void getParamNameByIndex(Index index, Name& out_name) const;
+../Inc/ScuParamManager.h(11): warning:  #1300-D: assignParamValue inherits implicit virtual
+  	void assignParamValue(const Name& name, const Value& value);
+../Inc/ScuParamManager.h(12): warning:  #1300-D: readParamValue inherits implicit virtual
+  	void readParamValue(const Name& name, Value& out_value) const;
+../Inc/ScuParamManager.h(13): warning:  #1300-D: readParamDefaultMaxMin inherits implicit virtual
+  	void readParamDefaultMaxMin(const Name& name, Value& out_def,
+../Inc/ScuParamManager.h(15): warning:  #1300-D: eraseAllParams inherits implicit virtual
+  	int eraseAllParams();
+../Inc/ScuParamManager.h(16): warning:  #1300-D: saveAllParams inherits implicit virtual
+  	int saveAllParams();
+..\Src\ScuParamManager.cpp(140): warning:  #1-D: last line of file ends without a newline
+  	
+..\libuavcan\libuavcan\include\uavcan/build_config.hpp(246): warning:  #550-D: variable "dummy"  was set but never used
+          char dummy[(sizeof(T) <= MemPoolBlockSize) ? 1 : -1] = { '0' };
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(536): warning:  #111-D: statement is unreachable
+          UAVCAN_ASSERT(0); // Unreachable
+          detected during:
+            instantiation of "int uavcan::Array<T, ArrayMode, MaxSize_>::decode(uavcan::Array<T, ArrayMode, MaxSize_>::SelfType &, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with T=uavcan::IntegerSpec<8U, uavcan::SignednessUnsigned, uavcan::CastModeSaturate>, ArrayMode=uavcan::ArrayModeDynamic, MaxSize_=80U]"  at line 335 of "..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp"
+            instantiation of "int uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::decode(uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::ReferenceType, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with _tmpl=0]"  at line 263 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 139 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            implicit generation of "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::~TransferForwarder() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            [ 2 instantiation contexts not shown ]
+            instantiation of "void uavcan::LazyConstructor<T>::construct<P1,P2,P3,P4>(uavcan::ParameterType<P1>::Type, uavcan::ParameterType<P2>::Type, uavcan::ParameterType<P3>::Type, uavcan::ParameterType<P4>::Type) [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder, P1=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener> &, P2=const uavcan::DataTypeDescriptor &, P3=uavcan::uint16_t, P4=uavcan::IPoolAllocator &]"  at line 247 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::checkInit() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 287 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::genericStart(bool (uavcan::Dispatcher::*)(uavcan::TransferListener *)) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 190 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::startAsServiceRequestListener() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 175 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of "int uavcan::ServiceServer<DataType_, Callback_>::start(const uavcan::ServiceServer<DataType_, Callback_>::Callback &) [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 119 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\Src\ScuParamManager.cpp: 35 warnings, 0 errors
+compiling uc_stm32_can.cpp...
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(488): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic push
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(489): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic ignored "-Wtype-limits"
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(540): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic pop
+..\dsdlc_generated\uavcan/Timestamp.hpp(241): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_TIMESTAMP_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/NodeStatus.hpp(486): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_NODESTATUS_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\HardwareVersion.hpp(335): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_HARDWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\SoftwareVersion.hpp(397): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_SOFTWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetNodeInfo.hpp(474): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETNODEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetNodeInfo, uavcan::protocol::GetNodeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetNodeInfo, Callback_=uavcan::NodeStatusProvider::GetNodeInfoCallback]"  at line 60 of "..\libuavcan\libuavcan\include\uavcan/protocol/node_status_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\DataTypeKind.hpp(252): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DATATYPEKIND_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp(604): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETDATATYPEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 27 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\debug\LogLevel.hpp(274): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGLEVEL_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/debug/LogMessage.hpp(306): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGMESSAGE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/RestartNode.hpp(405): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_RESTARTNODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::RestartNode, uavcan::protocol::RestartNode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::RestartNode, Callback_=uavcan::RestartRequestServer::RestartNodeCallback]"  at line 44 of "..\libuavcan\libuavcan\include\uavcan/protocol/restart_request_server.hpp"
+..\dsdlc_generated\uavcan\protocol\CANIfaceStats.hpp(292): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_CANIFACESTATS_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetTransportStats.hpp(463): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETTRANSPORTSTATS_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetTransportStats, uavcan::protocol::GetTransportStats_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetTransportStats, Callback_=uavcan::TransportStatsProvider::GetTransportStatsCallback]"  at line 26 of "..\libuavcan\libuavcan\include\uavcan/protocol/transport_stats_provider.hpp"
+..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32/can.hpp(234): warning:  #611-D: overloaded virtual function "uavcan::ICanDriver::getIface"  is only partially overridden in class "uavcan_stm32::CanDriver" 
+  class CanDriver : public uavcan::ICanDriver, uavcan::Noncopyable
+..\libuavcan\libuavcan\include\uavcan/build_config.hpp(246): warning:  #550-D: variable "dummy"  was set but never used
+          char dummy[(sizeof(T) <= MemPoolBlockSize) ? 1 : -1] = { '0' };
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(536): warning:  #111-D: statement is unreachable
+          UAVCAN_ASSERT(0); // Unreachable
+          detected during:
+            instantiation of "int uavcan::Array<T, ArrayMode, MaxSize_>::decode(uavcan::Array<T, ArrayMode, MaxSize_>::SelfType &, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with T=uavcan::IntegerSpec<8U, uavcan::SignednessUnsigned, uavcan::CastModeSaturate>, ArrayMode=uavcan::ArrayModeDynamic, MaxSize_=80U]"  at line 335 of "..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp"
+            instantiation of "int uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::decode(uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::ReferenceType, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with _tmpl=0]"  at line 263 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 139 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            implicit generation of "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::~TransferForwarder() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            [ 2 instantiation contexts not shown ]
+            instantiation of "void uavcan::LazyConstructor<T>::construct<P1,P2,P3,P4>(uavcan::ParameterType<P1>::Type, uavcan::ParameterType<P2>::Type, uavcan::ParameterType<P3>::Type, uavcan::ParameterType<P4>::Type) [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder, P1=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener> &, P2=const uavcan::DataTypeDescriptor &, P3=uavcan::uint16_t, P4=uavcan::IPoolAllocator &]"  at line 247 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::checkInit() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 287 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::genericStart(bool (uavcan::Dispatcher::*)(uavcan::TransferListener *)) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 190 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::startAsServiceRequestListener() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 175 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of "int uavcan::ServiceServer<DataType_, Callback_>::start(const uavcan::ServiceServer<DataType_, Callback_>::Callback &) [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 119 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\libuavcan\libuavcan_drivers\stm32\driver\src\uc_stm32_can.cpp: 22 warnings, 0 errors
+compiling uc_stm32_thread.cpp...
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(488): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic push
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(489): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic ignored "-Wtype-limits"
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(540): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic pop
+..\dsdlc_generated\uavcan/protocol/NodeStatus.hpp(486): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_NODESTATUS_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\HardwareVersion.hpp(335): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_HARDWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\SoftwareVersion.hpp(397): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_SOFTWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetNodeInfo.hpp(474): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETNODEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetNodeInfo, uavcan::protocol::GetNodeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetNodeInfo, Callback_=uavcan::NodeStatusProvider::GetNodeInfoCallback]"  at line 60 of "..\libuavcan\libuavcan\include\uavcan/protocol/node_status_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\DataTypeKind.hpp(252): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DATATYPEKIND_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp(604): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETDATATYPEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 27 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\debug\LogLevel.hpp(274): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGLEVEL_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/debug/LogMessage.hpp(306): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGMESSAGE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/RestartNode.hpp(405): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_RESTARTNODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::RestartNode, uavcan::protocol::RestartNode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::RestartNode, Callback_=uavcan::RestartRequestServer::RestartNodeCallback]"  at line 44 of "..\libuavcan\libuavcan\include\uavcan/protocol/restart_request_server.hpp"
+..\dsdlc_generated\uavcan\protocol\CANIfaceStats.hpp(292): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_CANIFACESTATS_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetTransportStats.hpp(463): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETTRANSPORTSTATS_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetTransportStats, uavcan::protocol::GetTransportStats_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetTransportStats, Callback_=uavcan::TransportStatsProvider::GetTransportStatsCallback]"  at line 26 of "..\libuavcan\libuavcan\include\uavcan/protocol/transport_stats_provider.hpp"
+..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32/can.hpp(234): warning:  #611-D: overloaded virtual function "uavcan::ICanDriver::getIface"  is only partially overridden in class "uavcan_stm32::CanDriver" 
+  class CanDriver : public uavcan::ICanDriver, uavcan::Noncopyable
+..\libuavcan\libuavcan\include\uavcan/build_config.hpp(246): warning:  #550-D: variable "dummy"  was set but never used
+          char dummy[(sizeof(T) <= MemPoolBlockSize) ? 1 : -1] = { '0' };
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(536): warning:  #111-D: statement is unreachable
+          UAVCAN_ASSERT(0); // Unreachable
+          detected during:
+            instantiation of "int uavcan::Array<T, ArrayMode, MaxSize_>::decode(uavcan::Array<T, ArrayMode, MaxSize_>::SelfType &, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with T=uavcan::IntegerSpec<8U, uavcan::SignednessUnsigned, uavcan::CastModeSaturate>, ArrayMode=uavcan::ArrayModeDynamic, MaxSize_=80U]"  at line 335 of "..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp"
+            instantiation of "int uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::decode(uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::ReferenceType, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with _tmpl=0]"  at line 263 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 139 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            implicit generation of "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::~TransferForwarder() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            [ 2 instantiation contexts not shown ]
+            instantiation of "void uavcan::LazyConstructor<T>::construct<P1,P2,P3,P4>(uavcan::ParameterType<P1>::Type, uavcan::ParameterType<P2>::Type, uavcan::ParameterType<P3>::Type, uavcan::ParameterType<P4>::Type) [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder, P1=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener> &, P2=const uavcan::DataTypeDescriptor &, P3=uavcan::uint16_t, P4=uavcan::IPoolAllocator &]"  at line 247 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::checkInit() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 287 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::genericStart(bool (uavcan::Dispatcher::*)(uavcan::TransferListener *)) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 190 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::startAsServiceRequestListener() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 175 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of "int uavcan::ServiceServer<DataType_, Callback_>::start(const uavcan::ServiceServer<DataType_, Callback_>::Callback &) [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 119 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\libuavcan\libuavcan_drivers\stm32\driver\src\uc_stm32_thread.cpp: 22 warnings, 0 errors
+compiling uc_stm32_clock.cpp...
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(488): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic push
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(489): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic ignored "-Wtype-limits"
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(540): warning:  #2803-D: unrecognized GCC pragma
+  # pragma GCC diagnostic pop
+..\dsdlc_generated\uavcan/Timestamp.hpp(241): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_TIMESTAMP_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/NodeStatus.hpp(486): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_NODESTATUS_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\HardwareVersion.hpp(335): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_HARDWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan\protocol\SoftwareVersion.hpp(397): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_SOFTWAREVERSION_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetNodeInfo.hpp(474): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETNODEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetNodeInfo, uavcan::protocol::GetNodeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetNodeInfo, DataStruct=uavcan::protocol::GetNodeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetNodeInfo, Callback_=uavcan::NodeStatusProvider::GetNodeInfoCallback]"  at line 60 of "..\libuavcan\libuavcan\include\uavcan/protocol/node_status_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\DataTypeKind.hpp(252): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DATATYPEKIND_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp(604): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETDATATYPEINFO_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 27 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\dsdlc_generated\uavcan\protocol\debug\LogLevel.hpp(274): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGLEVEL_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/debug/LogMessage.hpp(306): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_DEBUG_LOGMESSAGE_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/RestartNode.hpp(405): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_RESTARTNODE_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::RestartNode, uavcan::protocol::RestartNode_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::RestartNode, DataStruct=uavcan::protocol::RestartNode_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::RestartNode, Callback_=uavcan::RestartRequestServer::RestartNodeCallback]"  at line 44 of "..\libuavcan\libuavcan\include\uavcan/protocol/restart_request_server.hpp"
+..\dsdlc_generated\uavcan\protocol\CANIfaceStats.hpp(292): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_CANIFACESTATS_HPP_INCLUDED
+..\dsdlc_generated\uavcan/protocol/GetTransportStats.hpp(463): warning:  #1-D: last line of file ends without a newline
+  #endif // UAVCAN_PROTOCOL_GETTRANSPORTSTATS_HPP_INCLUDED
+..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp(137): warning:  #1300-D: handleIncomingTransfer inherits implicit virtual
+          void handleIncomingTransfer(IncomingTransfer& transfer)
+          detected during:
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 37 of "..\libuavcan\libuavcan\include\uavcan/util/lazy_constructor.hpp"
+            instantiation of class "uavcan::LazyConstructor<T> [with T=uavcan::GenericSubscriber<uavcan::protocol::GetTransportStats, uavcan::protocol::GetTransportStats_::Request, uavcan::TransferListener>::TransferForwarder]"  at line 155
+            instantiation of class "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType> [with DataSpec=uavcan::protocol::GetTransportStats, DataStruct=uavcan::protocol::GetTransportStats_::Request, TransferListenerType=uavcan::TransferListener]"  at line 91 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of class "uavcan::ServiceServer<DataType_, Callback_> [with DataType_=uavcan::protocol::GetTransportStats, Callback_=uavcan::TransportStatsProvider::GetTransportStatsCallback]"  at line 26 of "..\libuavcan\libuavcan\include\uavcan/protocol/transport_stats_provider.hpp"
+..\libuavcan\libuavcan\include\uavcan/build_config.hpp(246): warning:  #550-D: variable "dummy"  was set but never used
+          char dummy[(sizeof(T) <= MemPoolBlockSize) ? 1 : -1] = { '0' };
+..\libuavcan\libuavcan\include\uavcan/marshal/array.hpp(536): warning:  #111-D: statement is unreachable
+          UAVCAN_ASSERT(0); // Unreachable
+          detected during:
+            instantiation of "int uavcan::Array<T, ArrayMode, MaxSize_>::decode(uavcan::Array<T, ArrayMode, MaxSize_>::SelfType &, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with T=uavcan::IntegerSpec<8U, uavcan::SignednessUnsigned, uavcan::CastModeSaturate>, ArrayMode=uavcan::ArrayModeDynamic, MaxSize_=80U]"  at line 335 of "..\dsdlc_generated\uavcan/protocol/GetDataTypeInfo.hpp"
+            instantiation of "int uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::decode(uavcan::protocol::GetDataTypeInfo_::Request_<_tmpl>::ReferenceType, uavcan::ScalarCodec &, uavcan::TailArrayOptimizationMode) [with _tmpl=0]"  at line 263 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 139 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "void uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::handleIncomingTransfer(uavcan::IncomingTransfer &) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            implicit generation of "uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::TransferForwarder::~TransferForwarder() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 152 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            [ 2 instantiation contexts not shown ]
+            instantiation of "void uavcan::LazyConstructor<T>::construct<P1,P2,P3,P4>(uavcan::ParameterType<P1>::Type, uavcan::ParameterType<P2>::Type, uavcan::ParameterType<P3>::Type, uavcan::ParameterType<P4>::Type) [with T=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener>::TransferForwarder, P1=uavcan::GenericSubscriber<uavcan::protocol::GetDataTypeInfo, uavcan::protocol::GetDataTypeInfo_::Request, uavcan::TransferListener> &, P2=const uavcan::DataTypeDescriptor &, P3=uavcan::uint16_t, P4=uavcan::IPoolAllocator &]"  at line 247 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::checkInit() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 287 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::genericStart(bool (uavcan::Dispatcher::*)(uavcan::TransferListener *)) [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 190 of "..\libuavcan\libuavcan\include\uavcan/node/generic_subscriber.hpp"
+            instantiation of "int uavcan::GenericSubscriber<DataSpec, DataStruct, TransferListenerType>::startAsServiceRequestListener() [with DataSpec=uavcan::protocol::GetDataTypeInfo, DataStruct=uavcan::protocol::GetDataTypeInfo_::Request, TransferListenerType=uavcan::TransferListener]"  at line 175 of "..\libuavcan\libuavcan\include\uavcan/node/service_server.hpp"
+            instantiation of "int uavcan::ServiceServer<DataType_, Callback_>::start(const uavcan::ServiceServer<DataType_, Callback_>::Callback &) [with DataType_=uavcan::protocol::GetDataTypeInfo, Callback_=uavcan::DataTypeInfoProvider::GetDataTypeInfoCallback]"  at line 119 of "..\libuavcan\libuavcan\include\uavcan/protocol/data_type_info_provider.hpp"
+..\libuavcan\libuavcan_drivers\stm32\driver\src\uc_stm32_clock.cpp: 21 warnings, 0 errors
+linking...
+Program Size: Code=55458 RO-data=3838 RW-data=404 ZI-data=111572  
+"arducopter_stepper_pcb_firmware\arducopter_stepper_pcb_firmware.axf" - 0 Error(s), 240 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -50,7 +890,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.0.1
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:44
 </pre>
 </body>
 </html>

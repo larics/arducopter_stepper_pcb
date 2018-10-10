@@ -329,17 +329,17 @@ int sign(int value)
 int getPulsCnt(int motor_id)
 {
 	int ret = 0;
-	HAL_NVIC_DisableIRQ(TIM4_IRQn);
+	HAL_NVIC_DisableIRQ(TIM8_CC_IRQn);
 	ret = pulsCnt[motor_id-1];
-	HAL_NVIC_EnableIRQ(TIM4_IRQn);
+	HAL_NVIC_EnableIRQ(TIM8_CC_IRQn);
 	return ret;
 }
 
 void setPulsCnt(int count, int motor_id)
 {
-	HAL_NVIC_DisableIRQ(TIM4_IRQn);
+	HAL_NVIC_DisableIRQ(TIM8_CC_IRQn);
 	pulsCnt[motor_id-1] = count;
-	HAL_NVIC_EnableIRQ(TIM4_IRQn);
+	HAL_NVIC_EnableIRQ(TIM8_CC_IRQn);
 }
 
 void mm_control_algorithm(mmControl_TypeDef *params, int motor_id)
@@ -389,9 +389,9 @@ void mm_control_algorithm(mmControl_TypeDef *params, int motor_id)
 	{
 		wNew = wAct[motor_id-1]+rLim_l;
 	}
-	else if((wAct[motor_id-1] - wRef) > dLim_l)
+	else if((wAct[motor_id-1] - wRef) > rLim_l)
 	{
-		wNew = wAct[motor_id-1]-dLim_l;
+		wNew = wAct[motor_id-1]-rLim_l;
 	}
 	else
 	{

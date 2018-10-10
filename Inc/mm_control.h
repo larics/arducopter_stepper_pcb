@@ -1,6 +1,10 @@
 #ifndef MM_CONTROL_H
 #define MM_CONTROL_H
 
+#ifdef __cplusplus
+ extern "C" {
+#endif
+
 #include "stm32f4xx_hal.h"
 #include "tim.h"
 
@@ -31,4 +35,7 @@ void mm_control_motor2_set_compare(TIM_HandleTypeDef *htim, uint32_t period);
 void mm_control_motor3_set_compare(TIM_HandleTypeDef *htim, uint32_t period);
 void mm_control_motor4_set_compare(TIM_HandleTypeDef *htim, uint32_t period);
 
+#ifdef __cplusplus
+}
+#endif
 #endif

@@ -2,6 +2,7 @@ DebugConfig/
 Objects/
 RTE/
 Listing/
+dsdlc_generated/
 MDK-ARM/RTE/
 MDK-ARM/DebugConfig/
-MDK-ARM/arducopter_steper_pcb_firmware/
+MDK-ARM/arducopter_stepper_pcb_firmware/

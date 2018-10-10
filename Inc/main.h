@@ -100,10 +100,19 @@
 /* USER CODE BEGIN Private defines */
 #define MM_TIMER_PRESCALER 279
 #define MM_TIMER_FREQUENCY 10
-#define MM_CONTROL_SAMPLING_FREQUENCY (uint32_t)200
+#define MM_CONTROL_SAMPLING_FREQUENCY (uint32_t)100
 #define BUFSIZE				20*20
 #define BAUDRATE			115200
 #define PACKSIZE			20					//size of data packet in bytes
+#define SCU_ID				31
+#define MM_CONTROL_P	14
+#define MM_CONTROL_OMEGA_MAX 4000
+#define MM_CONTROL_ACC_MAX 27500
+#define MM_CONTROL_DEAD_ZONE 5
+#define SW_VERSION_MAJOR 1
+#define SW_VERSION_MINOR 0
+#define HW_VERSION_MAJOR 1
+#define HW_VERSION_MINOR 0
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

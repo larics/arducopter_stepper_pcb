@@ -54,6 +54,8 @@
 /* USER CODE BEGIN Includes */     
 #include <mm_control.h>
 #include <usart.h>
+#include <flash.h>
+#include <scu_libuavcan.h>
 /* USER CODE END Includes */
 
 /* Variables -----------------------------------------------------------------*/
@@ -62,13 +64,15 @@ osThreadId mm1ControlHandle;
 osThreadId mm2ControlHandle;
 osThreadId mm3ControlHandle;
 osThreadId mm4ControlHandle;
+osThreadId canTaskHandle;
 
 xQueueHandle mm_motorISRqueue[4];
 xQueueHandle xQueueMotorSetpoint[4];
 xQueueHandle xQueueMotorSetup[4];
 
 /* USER CODE BEGIN Variables */
-
+extern mmControl_TypeDef scu_parameters;
+extern scu_libuavcan scu_can1;
 /* USER CODE END Variables */
 
 /* Function prototypes -------------------------------------------------------*/
@@ -78,6 +82,7 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* USER CODE BEGIN FunctionPrototypes */
 void mmControlTask(void const * argument);
+void uavcanTask(void const * argument);
 void vDecodeMsgTask(void *argument);
 xTaskHandle xDecodeMsgTaskHandle;
 /* USER CODE END FunctionPrototypes */
@@ -126,6 +131,10 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(MOTOR4_TASK, mmControlTask, osPriorityRealtime, 0, 512);
   mm4ControlHandle = osThreadCreate(osThread(MOTOR4_TASK), (void *)4);
 	
+	/* definition and creation of canTask */
+  osThreadDef(canTask, uavcanTask, osPriorityHigh, 0, 4096);
+  canTaskHandle = osThreadCreate(osThread(canTask), NULL);
+	
 	/* definition and creation of mmControl */
 	xTaskCreate(
 		vDecodeMsgTask,
@@ -170,19 +179,29 @@ void StartDefaultTask(void const * argument)
 
 /* USER CODE BEGIN Application */
 
+/* uavcanTask function */
+void uavcanTask(void const * argument)
+{
+  /* USER CODE BEGIN uavcanTask */
+  scu_can1.scu_libuavcan_Init(SCU_ID);
+  scu_can1.start();
+  /* Infinite loop */
+  for(;;)
+  {
+		if (scu_can1.get_system_reset_flag() == true)
+			HAL_NVIC_SystemReset();
+
+		scu_can1.spin(20);
+  }
+  /* USER CODE END uavcanTask */
+}
+
 /* mmControlTask function */
 void mmControlTask(void const * argument)
 {
   /* USER CODE BEGIN mmControlTask */
-  mmControl_TypeDef mm_motor_parameters;
 	uint32_t motorNumber = (uint32_t)argument;
 	motor_setup_t setupMsg;
-	
-	mm_motor_parameters.P = 2;
-	mm_motor_parameters.acc_max = 1000000;
-	mm_motor_parameters.dead_zone = 0;
-	mm_motor_parameters.omega_max = 1200000;
-	mm_motor_parameters.SamplingFrequency = MM_CONTROL_SAMPLING_FREQUENCY;
 
   /* Infinite loop */
   for(;;)
@@ -190,12 +209,12 @@ void mmControlTask(void const * argument)
 		if(xQueueReceive(xQueueMotorSetup[motorNumber-1],(void *)&setupMsg,(TickType_t) 0) == pdTRUE)
 		{
 			//Refresh controler parameters
-			mm_motor_parameters.P = setupMsg.P;
-			mm_motor_parameters.omega_max = setupMsg.wMax;
-			mm_motor_parameters.acc_max = setupMsg.rLim;
-			mm_motor_parameters.dead_zone = setupMsg.dLim;;
+			scu_parameters.P = setupMsg.P;
+			scu_parameters.omega_max = setupMsg.wMax;
+			scu_parameters.acc_max = setupMsg.rLim;
+			scu_parameters.dead_zone = setupMsg.dLim;;
 		}
-		mm_control_algorithm(&mm_motor_parameters, motorNumber);
+		mm_control_algorithm(&scu_parameters, motorNumber);
 		osDelay(1000.0/MM_CONTROL_SAMPLING_FREQUENCY);
   }
 }

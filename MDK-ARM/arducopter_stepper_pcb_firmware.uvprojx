@@ -70,9 +70,9 @@
             <nStopU2X>0</nStopU2X>
           </BeforeCompile>
           <BeforeMake>
-            <RunUserProg1>0</RunUserProg1>
+            <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>python ..\libuavcan\libuavcan\dsdl_compiler\libuavcan_dsdlc ../libuavcan/dsdl/uavcan -O ../dsdlc_generated</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -187,7 +187,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -333,10 +333,10 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls>--C99</MiscControls>
-              <Define>USE_HAL_DRIVER,STM32F405xx</Define>
+              <MiscControls>--cpp --gnu</MiscControls>
+              <Define>USE_HAL_DRIVER,STM32F405xx,UAVCAN_STM32_FREERTOS=1,STM32_TIMCLK1=84000000,UAVCAN_STM32_NUM_IFACES=1,UAVCAN_STM32_TIMER_NUMBER=3,NDEBUG,UAVCAN_CPP_VERSION=UAVCAN_CPP03</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;  ../Drivers/STM32F4xx_HAL_Driver/Inc;  ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;  ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;  ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;  ../Middlewares/Third_Party/FreeRTOS/Source/include;  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;  ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../Drivers/CMSIS/Include;..\libuavcan\libuavcan\include;..\libuavcan\libuavcan_drivers\stm32\driver\include;..\dsdlc_generated</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -546,24 +546,19 @@
               <FilePath>../Src/stm32f4xx_hal_timebase_TIM.c</FilePath>
             </File>
             <File>
-              <FileName>freertos.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/freertos.c</FilePath>
-            </File>
-            <File>
               <FileName>tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/tim.c</FilePath>
             </File>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/main.c</FilePath>
-            </File>
-            <File>
               <FileName>mm_control.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\mm_control.c</FilePath>
+            </File>
+            <File>
+              <FileName>flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\flash.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -619,6 +614,271 @@
               <FileName>mm_control.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Inc\mm_control.h</FilePath>
+            </File>
+            <File>
+              <FileName>chip.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Inc\chip.h</FilePath>
+            </File>
+            <File>
+              <FileName>scu_libuavcan.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Inc\scu_libuavcan.h</FilePath>
+            </File>
+            <File>
+              <FileName>scu_libuavcanSTM32.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Inc\scu_libuavcanSTM32.h</FilePath>
+            </File>
+            <File>
+              <FileName>ScuParamManager.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Inc\ScuParamManager.h</FilePath>
+            </File>
+            <File>
+              <FileName>ScuRestartRequestHandler.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Inc\ScuRestartRequestHandler.h</FilePath>
+            </File>
+            <File>
+              <FileName>flash.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Inc\flash.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/UserCPP</GroupName>
+          <Files>
+            <File>
+              <FileName>freertos.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\freertos.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>main.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\main.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>scu_libuavcan.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\scu_libuavcan.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>scu_libuavcanSTM32.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\scu_libuavcanSTM32.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ScuParamManager.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\ScuParamManager.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>ScuRestartRequestHandler.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Src\ScuRestartRequestHandler.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>libuavcan</GroupName>
+          <Files>
+            <File>
+              <FileName>uc_data_type.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\uc_data_type.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_dynamic_memory.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\uc_dynamic_memory.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_error.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\uc_error.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_can_acceptance_filter_configurator.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\transport\uc_can_acceptance_filter_configurator.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_can_io.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\transport\uc_can_io.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_crc.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\transport\uc_crc.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_dispatcher.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\transport\uc_dispatcher.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_frame.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\transport\uc_frame.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_outgoing_transfer_registry.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\transport\uc_outgoing_transfer_registry.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_transfer.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\transport\uc_transfer.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_transfer_buffer.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\transport\uc_transfer_buffer.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_transfer_listener.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\transport\uc_transfer_listener.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_transfer_receiver.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\transport\uc_transfer_receiver.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_transfer_sender.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\transport\uc_transfer_sender.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_dynamic_node_id_client.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\protocol\uc_dynamic_node_id_client.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_node_status_provider.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\protocol\uc_node_status_provider.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_generic_publisher.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\node\uc_generic_publisher.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_generic_subscriber.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\node\uc_generic_subscriber.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_global_data_type_registry.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\node\uc_global_data_type_registry.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_scheduler.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\node\uc_scheduler.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_service_client.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\node\uc_service_client.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_timer.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\node\uc_timer.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_bit_array_copy.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\marshal\uc_bit_array_copy.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_bit_stream.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\marshal\uc_bit_stream.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_float_spec.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\marshal\uc_float_spec.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_scalar_codec.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\marshal\uc_scalar_codec.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_can.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan\src\driver\uc_can.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>libuavcanSTM32</GroupName>
+          <Files>
+            <File>
+              <FileName>uc_stm32_can.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan_drivers\stm32\driver\src\uc_stm32_can.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_stm32_clock.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan_drivers\stm32\driver\src\uc_stm32_clock.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>uc_stm32_thread.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\libuavcan\libuavcan_drivers\stm32\driver\src\uc_stm32_thread.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>libuavcanSTM32Includes</GroupName>
+          <Files>
+            <File>
+              <FileName>build_config.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32\build_config.hpp</FilePath>
+            </File>
+            <File>
+              <FileName>bxcan.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32\bxcan.hpp</FilePath>
+            </File>
+            <File>
+              <FileName>can.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32\can.hpp</FilePath>
+            </File>
+            <File>
+              <FileName>clock.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32\clock.hpp</FilePath>
+            </File>
+            <File>
+              <FileName>thread.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32\thread.hpp</FilePath>
+            </File>
+            <File>
+              <FileName>uavcan_stm32.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\libuavcan\libuavcan_drivers\stm32\driver\include\uavcan_stm32\uavcan_stm32.hpp</FilePath>
+            </File>
+            <File>
+              <FileName>internal.hpp</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\libuavcan\libuavcan_drivers\stm32\driver\src\internal.hpp</FilePath>
             </File>
           </Files>
         </Group>
